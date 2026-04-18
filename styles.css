@@ -1,0 +1,146 @@
+/* SIDEBAR HIDE/SHOW */
+.sidebar {
+  width: 200px;
+  transform: translateX(-180px); /* mostly hidden */
+  transition: transform 0.3s ease;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+/* Adjust main when sidebar opens */
+.main.shift {
+  margin-left: 200px;
+  transition: margin-left 0.3s ease;
+}
+
+.main {
+  margin-left: 20px; /* small gap when hidden */
+  transition: margin-left 0.3s ease;
+}
+body {
+  margin: 0;
+  font-family: Consolas, monospace;
+  background: #121212;
+  color: white;
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 200px;
+  background: #1a1a1a;
+  border-right: 2px solid #4CAF50;
+  height: 100vh;
+  padding-top: 20px;
+  position: fixed;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background: #4CAF50;
+}
+
+.sidebar a.active {
+  background: #4CAF50;
+}
+
+/* MAIN */
+.main {
+  margin-left: 200px;
+  padding: 20px;
+  width: 100%;
+}
+
+/* PAGES */
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* TITLE */
+.page-title {
+  text-align: center;
+  color: #4CAF50;
+}
+
+
+/* BOX */
+.box {
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+  background: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BUTTON */
+.btn {
+  width: 110px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #4CAF50;
+}
+
+/* DROPDOWN */
+.dropdown {
+  margin-top: 15px;
+}
+
+.dropdown-header {
+  background: #2a2a2a;
+  padding: 10px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.dropdown.open .dropdown-content {
+  max-height: 1000px;
+}
+
+/* IMAGE */
+img {
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px #4CAF50;
+  }
+  50% {
+    box-shadow: 0 0 15px #4CAF50;
+  }
+  100% {
+    box-shadow: 0 0 25px #4CAF50;
+  }
+}
